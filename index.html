@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        select {
+            width: 100%;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expense Tracker</h1>
+    <label for="date">Date:</label>
+    <input type="date" id="date">
+    <script>
+        const dateInput = document.getElementById("date");
+        dateInput.addEventListener("change", () => {
+            const date = dateInput.value;
+            localStorage.setItem('message', date );
+            window.location.href = 'expenses.html';
+        });
+    </script>
+</body>
+</html>
